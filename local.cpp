@@ -1,5 +1,5 @@
 /**
-Algoritmo de Needleman-Wunsch para obter a similaridade
+Algoritmo Local
 */
 #include <iostream>
 #include <fstream>
