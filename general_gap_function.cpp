@@ -65,8 +65,12 @@ void generalGapFunction(vector< vector<int> > &a, vector< vector<int> > &b,
 		{
 			a[i][j] = score(s[i-1], t[j-1]) + maximum( a[i-1][j-1], b[i-1][j-1], c[i-1][j-1] );
 			
-			b[i][j] = max( max_1(a,i,j), max_1(c,i,j) );
-			cout<<"*************************************\n";
+			cout<<"***************"<<i<<j<<"**********************\n";
+			int m1 = max_1(a,i,j);
+			int m2 = max_1(c,i,j);
+			
+			b[i][j] = max(m1 , m2 );
+
 			c[i][j] = max( max_2(a,i,j), max_2(b,i,j) );
 		}
 	}
@@ -138,16 +142,16 @@ int max_1(vector< vector<int> > &a, int i, int j){
 	{
 		int temp = a[i][j-k] - w(k);
 
+		cout<<" "<<temp<<" "<<n<<" "<<a[i][j-k]<<" "<<w(k)<<endl;
 		if (temp > n)
 		{
-			// cout<<" "<<temp<<" "<<n<<" "<<a[i][j-k]<<" "<<w(k)<<endl;
 			n = temp;
 		}
 
 		k++;
 	}
 
-
+	cout<<endl;
 	return n;
 }
 
@@ -160,14 +164,14 @@ int max_2(vector< vector<int> > &a, int i, int j){
 	{
 		int temp = a[i-k][j] - w(k);
 		
+		cout<<" "<<temp<<" "<<n<<" "<<a[i-k][j]<<" "<<w(k)<<endl;
 		if (temp > n)
 		{
-			// cout<<" "<<temp<<" "<<n<<" "<<a[i-k][j]<<" "<<w(k)<<endl;
 			n = temp;
 		}
 
 		k++;
 	}
-
+	cout<<endl;
 	return n;
 }
