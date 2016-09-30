@@ -14,8 +14,8 @@ Similaridade semi-global
 
 using namespace std;
 
-#define M 2
-#define N 6
+#define M 11
+#define N 13
 
 int g = -2; //gap
 
@@ -26,8 +26,8 @@ int score(char, char);
 
 int main(int argc, char const *argv[])
 {
-	vector<char> x = {'a','c'};
-	vector<char> y = {'c','t','a','c','g','a'};
+    vector<char> x = {'a','b','r','a','c','a','d','a','b','r','a'};
+	vector<char> y = {'c','a','b','e','c','a','d','e','c','a','b','r','a'};
 
 	for (int i = 0; i < M; i++)
 	{

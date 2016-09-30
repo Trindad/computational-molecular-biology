@@ -14,8 +14,8 @@ Algoritmo Local
 
 using namespace std;
 
-#define M 5
-#define N 6
+#define M 11
+#define N 13
 
 int sim[M+1][N+1];//m+1 e n+1
 int g = -2;
@@ -25,8 +25,8 @@ int score(char, char);
 
 int main(int argc, char const *argv[])
 {
-	vector<char> x = {'g','g','t','a','c'};
-	vector<char> y = {'c','t','a','c','g','a'};
+	vector<char> x = {'a','b','r','a','c','a','d','a','b','r','a'};
+	vector<char> y = {'c','a','b','e','c','a','d','e','c','a','b','r','a'};
 
 	for (int i = 0; i < M; i++)
 	{

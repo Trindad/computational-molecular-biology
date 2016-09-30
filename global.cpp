@@ -14,10 +14,10 @@ Algoritmo de Needleman-Wunsch para obter a similaridade
 
 using namespace std;
 
-#define M 4
-#define N 6
+#define M 11
+#define N 13
 
-int g = -1; //gap
+int g = -2; //gap
 
 int sim[M+1][N+1];//m+1 e n+1
 
@@ -26,8 +26,11 @@ int score(char, char);
 
 int main(int argc, char const *argv[])
 {
-	vector<char> x = {'a','c','g','c'};
-	vector<char> y = {'g','a','c','t','a','c'};
+	// vector<char> x = {'t','a','c','t','g','t','t','a','g','t'};
+	// vector<char> y = {'t','c','t','a','t'};
+
+	vector<char> x = {'a','b','r','a','c','a','d','a','b','r','a'};
+	vector<char> y = {'c','a','b','e','c','a','d','e','c','a','b','r','a'};
 
 	for (int i = 0; i < M; i++)
 	{
@@ -91,7 +94,7 @@ int score(char a, char b){
 		return 1;
 	}
 
-	return 0;
+	return -1;
 }
 
 
