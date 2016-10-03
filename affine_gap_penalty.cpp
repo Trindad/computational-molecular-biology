@@ -15,7 +15,7 @@ using namespace std;
 #define N 9
 
 int g = 1;//gap
-int h = 20;
+int h = 0;
 
 vector<char> s = {'t','a','c','g','g','g','t','a','t'};
 vector<char> t = {'g','g','a','c','g','t','a','c','g'};
@@ -117,6 +117,26 @@ void execute(vector< vector<int> > &a, vector< vector<int> > &b,
 		for (int j = 0; j <= N; j++)
 		{
 			cout<<c[i][j]<<" ";
+		}
+		cout<<"\n";
+	}
+	cout<<"\n";
+
+	vector<vector<int>> optimal = vector< vector<int> > (M + 1, vector<int> ( N + 1, 0 ) );
+
+	for (int i = 0; i <= M; i++)
+	{
+		for (int j = 0; j <= N; j++)
+		{
+			optimal[i][j] = maximum(a[i][j],b[i][j],c[i][j]);
+		}
+	}
+
+	for (int i = 0; i <= M; i++)
+	{
+		for (int j = 0; j <= N; j++)
+		{
+			cout<<optimal[i][j]<<" ";
 		}
 		cout<<"\n";
 	}
