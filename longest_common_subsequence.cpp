@@ -95,7 +95,6 @@ void printLCS(vector<vector<int>> &b, int i, int j)
 	{
 		return;
 	}
-
 	if (b[i][j] == 2)
 	{
 		printLCS(b,i-1,j-1);
