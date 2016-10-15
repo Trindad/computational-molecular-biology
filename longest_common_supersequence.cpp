@@ -24,7 +24,7 @@ int maximum(int, int, int);
 int main(int argc, char const *argv[])
 {
 	vector< vector<int> > a = vector< vector<int> > (M+1, vector<int> ( N+1, 0 ) );
-	vector<char> s = {'A','T','A','T','A','G'};
+	vector<char> s = {'A','T','A','T','A','A'};
 	vector<char> t = {'T','T','A'};
 
 	execute(a, s, t);
