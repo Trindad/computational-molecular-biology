@@ -56,6 +56,7 @@ void execute(vector< vector<int> > &a, vector<char> s, vector<char> t) {
 	}
 
 	vector< vector<string> > b = vector< vector<string> > (M+1, vector<string> ( N+1,"3") );
+	vector< vector<int> > edge = vector< vector<int> > (M+1, vector<int> ( N+1, 1) );
 	
 	for (i = 1; i <= M; i++)
 	{
@@ -65,38 +66,27 @@ void execute(vector< vector<int> > &a, vector<char> s, vector<char> t) {
 
 			a[i][j] = minimum(p, a[i-1][j] + 1, a[i][j-1] + 1);
 			
-			string str = "";
+			int count = 0;
 			
 			if (a[i][j] == p)
 			{
-				str+="1";
+				count += edge[i-1][j-1];
 			}
 			if (a[i][j] == (a[i-1][j] + 1) )
 			{
-				str+="2";
+				count += edge[i-1][j];
 			}
 			if (a[i][j] == (a[i][j-1] + 1) )
 			{
-				str+="3";
+				count += edge[i][j-1];
 			}
 
-			b[i][j] += str;
+			edge[i][j] = count;
 		}
 
 	}
 
-	vector< vector<int> > edge = vector< vector<int> > (M+1, vector<int> ( N+1, 0) );
-	
-	for (i = 0; i <= M; i++)
-	{
-		for (j = 0; j <= N; j++)
-		{
-			string str = b[i][j];
-			edge[i][j] = (int)b[i][j].size();
-		}
-	}
-
-	cout<<"number of paths = "<<edge[M-1][N-1]<<endl;
+	cout<<"number of paths = "<<edge[M][N]<<endl;
 
 	//imprime matriz de valores
 	for (i = 0; i <= M; i++)
