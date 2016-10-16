@@ -19,7 +19,7 @@ void execute(vector< vector<int> > &, vector<char>, vector<char>);//executa o al
 
 int score(int,int);
 
-int maximum(int, int, int);
+int minimum(int, int, int);
 
 int main(int argc, char const *argv[])
 {
